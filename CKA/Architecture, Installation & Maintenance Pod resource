@@ -1,0 +1,1 @@
+kubectl top pod -A --sort-by='cpu' | head -n 2 | tail -n 1 | awk '{print ($2","$1)}' > high_cpu_pod.txt

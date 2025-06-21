@@ -1,0 +1,5 @@
+k logs alpine-reader-pod | grep -E "INFO|ERROR" > podlogs.txt
+or
+k logs alpine-reader-pod | grep "INFO\|ERROR" > podlogs.txt
+or
+k logs alpine-reader-pod | grep -e “INFO” -e ”ERROR" > podlogs.txt
