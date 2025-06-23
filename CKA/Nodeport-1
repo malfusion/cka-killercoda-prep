@@ -1,0 +1,8 @@
+k create deploy my-web-app-deployment --image=wordpress --replicas=2 -o yaml --dry-run
+
+k expose deployment my-web-app-deployment --name=my-web-app-service --type=NodePort --port=80  --dry-run -o yaml > svc.yaml
+
+# svc.yaml
++ nodePort: 30770
+
+k apply -f svc.yaml

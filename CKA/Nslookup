@@ -1,0 +1,7 @@
+kubectl run nginx-pod-cka --image=nginx
+
+k expose pod nginx-pod-cka --name=nginx-service-cka --type=ClusterIP --port=80
+
+k run test-nslookup --image=busybox --command -- sleep 9999
+
+k exec -it test-nslookup -- nslookup nginx-service-cka > nginx-service.txt
